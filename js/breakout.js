@@ -138,6 +138,7 @@ document.addEventListener('keyup', keyUp)
 
 function moveBall() {
     ball.x = ball.x + ball.dx
+    ball.y = ball.y + ball.dy
 }
 
 // Update canvas drawing and animation
