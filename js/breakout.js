@@ -156,6 +156,8 @@ function moveBall() {
     //wall collision (bottom)
     if (ball.y + ball.size > canvas.height) {
         ball.dy = -1 * ball.dy
+        showAllBricks()
+        score = 0
     }
 
     //wall collision (left)
@@ -188,9 +190,6 @@ function moveBall() {
             }
         })
     })
-
-    //lose if hits bottom wall
-    if (ball.y + ball.size > canvas)
 }
 
 //increase score
@@ -204,7 +203,7 @@ function increaseScore() {
 }
 
 function showAllBricks() {
-    brick.forEach(column => {
+    bricks.forEach(column => {
         column.forEach(brick => {
             brick.visible = true
         })
