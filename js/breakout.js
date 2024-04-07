@@ -3,6 +3,14 @@ rules = document.getElementById('rules')
 closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
+playBtn = document.getElementById('play-btn')
+
+playBtn.addEventListener('click', () => {
+    playBtn.classList.add('active')
+    ball.x = canvas.width / 2
+    ball.y = canvas.height / 2
+    
+})
 
 score = 0
 
@@ -158,6 +166,7 @@ function moveBall() {
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
+        ball.speed = 0
     }
 
     //wall collision (left)
