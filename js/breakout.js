@@ -5,12 +5,7 @@ canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 playBtn = document.getElementById('play-btn')
 
-playBtn.addEventListener('click', () => {
-    playBtn.classList.add('active')
-    ball.x = canvas.width / 2
-    ball.y = canvas.height / 2
-    
-})
+
 
 score = 0
 
@@ -164,9 +159,10 @@ function moveBall() {
     //wall collision (bottom)
     if (ball.y + ball.size > canvas.height) {
         ball.dy = -1 * ball.dy
-        showAllBricks()
-        score = 0
-        ball.speed = 0
+        //showAllBricks()
+        //score = 0
+        playBtn.classList.remove('active')
+        ball.speed = none
     }
 
     //wall collision (left)
@@ -228,8 +224,18 @@ function update() {
     draw()
     requestAnimationFrame(update)
 }
+draw()
+//update()
 
-update()
+playBtn.addEventListener('click', () => {
+    playBtn.classList.add('active')
+    ball.x = canvas.width / 2
+    ball.y = canvas.height / 2
+    paddle.x = canvas.width / 2 - 40
+    showAllBricks()
+    score = 0
+    update()
+})
 
 
 // Rulles open and close event handlers
