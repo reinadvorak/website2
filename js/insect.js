@@ -7,7 +7,9 @@ const scoreEl = document.getElementById('score')
 const message = document.getElementById('message')
 let seconds = 0
 let score = 0
-let selected-insect = {}
+let selected_insect = {}
 
-star.btn queryslector
+start_btn.addEventListener('click', () => {
+    screens[0].classList.add('up')
+})
 
