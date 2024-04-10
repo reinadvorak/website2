@@ -16,5 +16,7 @@ start_btn.addEventListener('click', () => {
 choose_insect_btns.forEach(btn => {
     btn.addEventListener('click', () => {
         const img = btn.querySelector('img')
+        const alt = img.getAttribute('alt')
+        const src = img.getAttribute('src')
     })
 })
