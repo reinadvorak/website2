@@ -141,7 +141,7 @@ h1 {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.insect.img {
+.insect img {
     width: 100px;
     height: 100px;
 }
