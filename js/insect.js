@@ -76,8 +76,11 @@ function increaseScore() {
         if (m >= 00 AND s >= 30) {
             won.classList.add('visible')
         }
-        if ()
-
+    }
+    if (m >= 00 AND s >= 30) {
+        if (score < 60) {
+            lost.classList.add('visible')
+        }
     }
     scoreEl.innerHTML = `Score: ${score}`
 }
