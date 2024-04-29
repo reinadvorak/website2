@@ -73,10 +73,11 @@ function increaseScore() {
         message.classList.add('visible')
     }
     if (score >= 60) {
-        if (m = 00 AND s = 30) {
-
+        if (m >= 00 AND s >= 30) {
+            won.classList.add('visible')
         }
-        won.classList.add('visible')
+        if ()
+
     }
     scoreEl.innerHTML = `Score: ${score}`
 }
