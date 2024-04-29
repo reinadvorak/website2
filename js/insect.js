@@ -5,6 +5,8 @@ const start_btn = document.getElementById('start-btn')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
 const message = document.getElementById('message')
+const won = document.getElementById('won')
+const lost = document.getElementById('lost')
 let seconds = 0
 let score = 0
 let selected_insect = {}
@@ -70,8 +72,8 @@ function increaseScore() {
     if (score > 19) {
         message.classList.add('visible')
     }
-    if (score >= 60) {
-        
+    if (score >= 60 & time) {
+        won.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
 }
