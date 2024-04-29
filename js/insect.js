@@ -70,6 +70,9 @@ function increaseScore() {
     if (score > 19) {
         message.classList.add('visible')
     }
+    if (score >= 60) {
+        
+    }
     scoreEl.innerHTML = `Score: ${score}`
 }
 
