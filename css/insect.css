@@ -147,5 +147,22 @@ h1 {
 }
 
 .won {
-    
+    opacity: 0;
+    line-height: 1.7;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    transition: transform 0.4s ease-in;
+}
+
+
+.won.visible {
+    opacity: 1;
+    transform: translate(-50%, 150%);
 }
