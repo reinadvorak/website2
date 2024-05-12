@@ -187,3 +187,11 @@ h1 {
     opacity: 1;
     transform: translate(-50%, 150%);
 }
+
+.back {
+    transform: translate(-600px,-310px);
+    position: fixed;
+}
+.back a {
+    color: black;
+}

@@ -127,3 +127,11 @@ h1 {
 .notification-container.show {
     transform: translateY(-50px);
 }
+
+.back {
+    transform: translate(-640px, 20px);
+    position: absolute;
+}
+.back a {
+    color: white;
+}

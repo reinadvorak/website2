@@ -82,3 +82,11 @@ h1 {
 .play-btn.active {
     display: none;
 }
+
+.back {
+    transform: translate(-620px,-290px);
+    position: absolute;
+}
+.back a {
+    color: black;
+}
