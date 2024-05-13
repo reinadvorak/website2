@@ -31,6 +31,7 @@ function displayWord() {
     if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You won!'
         popup.style.display = 'flex'
+        disableGame()
     }
 }
 
@@ -56,6 +57,7 @@ function updateWrongLettersEl() {
     if (wrongLetters.length == figureParts.length) {
         finalMessage.innerText = 'Unfortunately you lost!'
         popup.style.display = 'flex'
+        disableGame()
     }
 }
 
@@ -68,31 +70,48 @@ function showNotification() {
     }, 2000)
 }
 
+function disableGame() {
+    window.removeEventListener('keydown', handleKeydown)
+}
+
 //Keydown letter press
-window.addEventListener('keydown', e => {
+function handleKeydown(e) {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key
 
+        if (correctLetters.includes(letter) || wrongLetters.includes(letter)) {
+            showNotification()
+            return
+        }
 
         if(selectedWord.includes(letter)) {
-            if(!correctLetters.includes(letter)) {
-                correctLetters.push(letter)
-
-                displayWord()
-            } else {
-                showNotification()
-            }
+            correctLetters.push(letter)
+            displayWord()
         } else {
-            if (!wrongLetters.includes(letter)) {
-                wrongLetters.push(letter)
-
-                updateWrongLettersEl()
-            } else {
-                showNotification()
-            }
+            wrongLetters.push(letter)
+            updateWrongLettersEl()
         }
+        // if(selectedWord.includes(letter)) {
+        //     if(!correctLetters.includes(letter)) {
+        //         correctLetters.push(letter)
+
+        //         displayWord()
+        //     } else {
+        //         showNotification()
+        //     }
+        // } else {
+        //     if (!wrongLetters.includes(letter)) {
+        //         wrongLetters.push(letter)
+
+        //         updateWrongLettersEl()
+        //     } else {
+        //         showNotification()
+        //     }
+        // }
     }
-})
+}
+
+window.addEventListener('keydown', handleKeydown)
 
 // Restart game and play again
 playAgainBtn.addEventListener('click', () => {
@@ -107,6 +126,11 @@ playAgainBtn.addEventListener('click', () => {
     updateWrongLettersEl()
 
     popup.style.display = 'none'
+    enableGame()
 })
+
+function enableGame() {
+    window.addEventListener('keydown', handleKeydown)
+}
 
 displayWord()
