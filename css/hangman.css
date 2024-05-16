@@ -129,7 +129,7 @@ h1 {
 }
 
 .back {
-    transform: translate(-640px, 20px);
+    transform: translate(-600px, 20px);
     position: absolute;
 }
 .back a {
